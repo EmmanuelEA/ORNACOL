@@ -1,0 +1,37 @@
+<h3>{{titulo}}</h3>
+<hr/>
+
+<form #formImagen="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-imagen">
+
+  <label>
+    Vivero
+    <span *ngIf="!vivero.valid && vivero.touched" class="label label-danger">El nombre del vivero es obligatorio</span>
+  </label>
+  <input type="text" #vivero="ngModel" name ="vivero" [(ngModel)]="imagen.vivero" class="form-control" required/>
+
+  <label>
+    latitud
+    <span *ngIf="!latitud.valid && latitud.touched" class="label label-danger">La latitud es obligatoria</span>
+  </label>
+  <input type="text" #latitud="ngModel" name ="latitud" [(ngModel)]="imagen.latitud" class="form-control" required/>
+
+  <label>
+    longitud
+    <span *ngIf="!longitud.valid && longitud.touched" class="label label-danger"> Lomgitud es obligatoria</span>
+  </label>
+  <input type="text" #longitud="ngModel" name ="longitud" [(ngModel)]="imagen.longitud" class="form-control" required/>
+
+  <label>
+    prediccion
+    <span *ngIf="!predic.valid && predic.touched" class="label label-danger">El Dato no es correcto</span>
+  </label>
+  <input type="text" #predic="ngModel" name ="predic" [(ngModel)]="imagen.predic" class="form-control" required/>
+
+  <label>Imagen</label>
+  <div *ngIf="is_edit">
+    <img src="http://localhost/backend-ornacol/uploads/{{imagen.ruta}}" width="60"/>
+  </div>
+  <input type="file" class="form-control" (change)="fileChangeEvent($event)"/>
+  <br/>
+  <input type="submit" value="{{titulo}}" [disabled]="!formImagen.form.valid" class="btn btn-success">
+</form>

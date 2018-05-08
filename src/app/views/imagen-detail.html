@@ -1,0 +1,17 @@
+<div *ngIf="!imagen">
+    <h3>Cargando registro...</h3>
+</div>
+<div *ngIf="imagen">
+  <div class="col-lg-4" *ngIf="imagen.ruta">
+    <br>
+    <img class="imagen_imagen" src="http://localhost/backend-ornacol/uploads/{{imagen.ruta}}"/>
+  </div>
+  <div class="col-lg-8">
+    <h3>Vivero: {{imagen.vivero}}</h3>
+    <hr/>
+    <p><strong>Contiene: {{imagen.predic}}</strong></p>
+    <p><strong>Coordenadas:</strong></p>
+    <p><strong>Latitud: {{imagen.latitud}}</strong></p>
+    <p><strong>Longitud: {{imagen.longitud}}</strong></p>
+  </div>
+</div>

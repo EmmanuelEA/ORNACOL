@@ -1,0 +1,27 @@
+
+<div id="content" class="col-lg-10 col-lg-offset-1">
+
+  <header id="header" class="col-lg-12" [style.background]="header_color">
+
+    <h2>
+      {{title}}
+    </h2>
+    <img src="../images/Logo.jpg"/>
+  </header>
+
+  <nav id = "nav" class="col-lg-12">
+    <ul>
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']" >Principal</a></li>
+      <li><a [routerLink]="['/imagenes']" [routerLinkActive]="['activado']" >Registros</a></li>
+      <!-- <li><a [routerLink]="['/imagen-add']" [routerLinkActive]="['activado']" >Crear Registro</a></li> Para que no aparezca el link de agregar un registro--> 
+    </ul>
+  </nav>
+
+  <section id = "main" class="col-lg-12">
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer id="footer" class="col-lg-12">
+    <p>Ornamentales de Colima</p>
+  </footer>
+</div>
